@@ -294,7 +294,7 @@ func (v *VoiceConnection) open() (err error) {
 		if v.sessionID != "" {
 			break
 		}
-		if i > 20 { // only loop for up to 1 second total
+		if i > 20*10 { // only loop for up to 1 second total
 			return fmt.Errorf("did not receive voice Session ID in time")
 		}
 		time.Sleep(50 * time.Millisecond)
